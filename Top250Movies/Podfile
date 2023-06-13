@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Top250Movies' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Top250Movies
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+  pod 'RealmSwift'
+
+  target 'Top250MoviesTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Top250MoviesUITests' do
+    # Pods for testing
+  end
+
+end
