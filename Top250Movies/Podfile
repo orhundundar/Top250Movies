@@ -9,6 +9,7 @@ target 'Top250Movies' do
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod 'RealmSwift'
+  pod 'Kingfisher', '~> 7.0'
 
   target 'Top250MoviesTests' do
     inherit! :search_paths

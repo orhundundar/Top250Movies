@@ -16,6 +16,7 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        self.title = "Top 250 Movie"
         viewModel = MovieListViewModel(delegate: self)
         viewModel.getMovieList()
     }
@@ -42,6 +43,11 @@ extension MovieListViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var movieDetail = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
+        movieDetail.id = self.movieList[indexPath.row].id
+        self.navigationController?.pushViewController(movieDetail, animated: true)
+    }
     
 }
 

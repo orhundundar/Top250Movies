@@ -10,13 +10,13 @@ import ObjectMapper
 
 // MARK: - MovieItem
 class MovieItem: Object, Codable {
-    @objc var id: String
-    @objc var rank: String
-    @objc var title: String
-    @objc var fullTitle: String
-    @objc var year: String
-    @objc var image: String
-    @objc var crew: String
-    @objc var imDbRating: String
-    @objc var imDbRatingCount: String
+    @objc dynamic var id: String
+    @objc dynamic var rank: String
+    @objc dynamic var title: String
+    @objc dynamic var fullTitle: String
+    @objc dynamic var year: String
+    @objc dynamic var image: String
+    @objc dynamic var crew: String
+    @objc dynamic var imDbRating: String
+    @objc dynamic var imDbRatingCount: String
 }
