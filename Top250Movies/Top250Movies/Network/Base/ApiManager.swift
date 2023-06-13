@@ -13,10 +13,10 @@ class ApiManager {
         
         AF.request(url).responseData { response in
             
-            if let data = response.data {
+            switch response.result {
+            case .success(let data):
                 completionHandler(data)
-            }
-            else {
+            case .failure(let error):
                 completionHandler(nil)
             }
         }

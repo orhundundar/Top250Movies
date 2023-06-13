@@ -148,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C6396D302A388B340024F9F3 /* Network */,
+				C6396D3F2A38AD1E0024F9F3 /* LocalDatabase */,
 				C6396D362A3893A20024F9F3 /* Models */,
 				C6396D002A3866650024F9F3 /* AppDelegate.swift */,
 				C6396D022A3866650024F9F3 /* SceneDelegate.swift */,
@@ -209,6 +210,13 @@
 				C6396D3D2A3899D20024F9F3 /* ApiManager.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		C6396D3F2A38AD1E0024F9F3 /* LocalDatabase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalDatabase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
