@@ -1,16 +1,24 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+workspace 'Top250Movies.xcworkspace'
 
-target 'Top250Movies' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+use_frameworks!
 
-  # Pods for Top250Movies
-  pod 'Alamofire'
-  pod 'ObjectMapper'
-  pod 'RealmSwift'
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+def shared_pods
+    pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'RealmSwift'
+end
+
+xcodeproj 'Top250Movies.xcodeproj'
+xcodeproj 'NetworkAPI.xcodeproj'
+
+target :Top250Movies do
+  xcodeproj 'Top250Movies'
+  shared_pods
   pod 'Kingfisher', '~> 7.0'
-
+  
   target 'Top250MoviesTests' do
     inherit! :search_paths
     # Pods for testing
@@ -19,5 +27,9 @@ target 'Top250Movies' do
   target 'Top250MoviesUITests' do
     # Pods for testing
   end
+end
 
+target :NetworkAPI do
+  xcodeproj 'NetworkAPI.xcodeproj'
+  shared_pods
 end

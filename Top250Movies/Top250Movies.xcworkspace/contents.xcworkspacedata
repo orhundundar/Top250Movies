@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NetworkAPI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Top250Movies.xcodeproj">
    </FileRef>
    <FileRef
