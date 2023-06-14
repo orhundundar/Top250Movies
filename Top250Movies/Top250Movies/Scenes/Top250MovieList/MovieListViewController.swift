@@ -7,17 +7,21 @@
 
 import UIKit
 
+protocol MovieListViewControllerProtocol {
+    func reloadData()
+    func showErrorMessage(message: String)
+}
+
 class MovieListViewController: UIViewController {
     
     var moviesTableView = UITableView()
     private var viewModel: MovieListViewModel!
-    var movieList: [MovieItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         self.title = "Top 250 Movie"
-        viewModel = MovieListViewModel(delegate: self)
+        viewModel = MovieListViewModel(viewInterface: self)
         viewModel.getMovieList()
     }
     
@@ -29,33 +33,34 @@ class MovieListViewController: UIViewController {
         moviesTableView.register(UINib(nibName: MovieListCell.className, bundle: nil), forCellReuseIdentifier: "MovieListCell")
     }
     
-    
 }
 
 extension MovieListViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        return viewModel.dataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListCell") as! MovieListCell
-        cell.setCell(movie: self.movieList[indexPath.row])
+        cell.setCell(movie: self.viewModel.dataSource![indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var movieDetail = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
-        movieDetail.id = self.movieList[indexPath.row].id
+        let movieDetail = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
+        movieDetail.id = viewModel.dataSource![indexPath.row].id
         self.navigationController?.pushViewController(movieDetail, animated: true)
     }
     
 }
 
-extension MovieListViewController : MovieListViewModelDelegate {
+extension MovieListViewController: MovieListViewControllerProtocol {
     
-    func didMoviesReached(movieList: [MovieItem]) {
-        self.movieList = movieList
+    func reloadData() {
         self.moviesTableView.reloadData()
     }
+    
+    func showErrorMessage (message: String) {
+        // Alert
+    }
 }
-

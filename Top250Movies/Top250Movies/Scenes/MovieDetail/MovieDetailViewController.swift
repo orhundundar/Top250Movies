@@ -8,6 +8,11 @@
 import UIKit
 import Kingfisher
 
+protocol MovieDetailViewControllerProtocol {
+    func reloadData()
+    func showErrorMessage(message: String)
+}
+
 class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var coverImageView: UIImageView!
@@ -31,7 +36,7 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        viewModel = MovieDetailViewModel(delegate: self)
+        viewModel = MovieDetailViewModel(viewInterface: self)
         viewModel.getMovie(id: self.id)
     }
     
@@ -87,16 +92,20 @@ class MovieDetailViewController: UIViewController {
     
 }
 
-extension MovieDetailViewController : MovieDetailViewModelDelegate {
+extension MovieDetailViewController : MovieDetailViewControllerProtocol {
     
-    func didMovieReached(movie: MovieItem) {
-        self.title = movie.title
-        coverImageView.kf.setImage(with: URL(string: movie.image))
-        fullTitleLabel.text = movie.fullTitle
-        rankLabel.text = movie.rank
-        yearLabel.text = movie.year
-        crewLabel.text = movie.crew
-        imDbRatingLabel.text = movie.imDbRating
-        imDbRatingCountLabel.text = movie.imDbRatingCount
+    func reloadData() {
+        self.title = self.viewModel.dataSource?.title
+        coverImageView.kf.setImage(with: URL(string: self.viewModel.dataSource?.image ?? ""))
+        fullTitleLabel.text = self.viewModel.dataSource?.fullTitle
+        rankLabel.text = self.viewModel.dataSource?.rank
+        yearLabel.text = self.viewModel.dataSource?.year
+        crewLabel.text = self.viewModel.dataSource?.crew
+        imDbRatingLabel.text = self.viewModel.dataSource?.imDbRating
+        imDbRatingCountLabel.text = self.viewModel.dataSource?.imDbRatingCount
+    }
+    
+    func showErrorMessage(message: String) {
+        //TODO
     }
 }

@@ -7,16 +7,17 @@
 
 import Foundation
 
-protocol MovieDetailViewModelDelegate {
-    func didMovieReached(movie:MovieItem)
-}
+protocol MovieDetailViewModelProtocol {
+    var dataSource: MovieItem? { get }
+ }
 
-class MovieDetailViewModel {
+class MovieDetailViewModel : MovieDetailViewModelProtocol {
     
-    var delegate:MovieDetailViewModelDelegate!
+    var view: MovieDetailViewControllerProtocol
+    var dataSource: MovieItem?
     
-    init(delegate:MovieDetailViewModelDelegate) {
-        self.delegate = delegate
+    init(viewInterface:MovieDetailViewControllerProtocol) {
+        self.view = viewInterface
     }
     
     func getMovie(id:String){
@@ -24,7 +25,8 @@ class MovieDetailViewModel {
             guard let movieItem = movie else {
                 return //TODO
             }
-            self.delegate.didMovieReached(movie: movieItem)
+            self.dataSource = movieItem
+            self.view.reloadData()
         }
     }
     

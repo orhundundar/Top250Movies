@@ -7,21 +7,23 @@
 
 import Foundation
 
-protocol MovieListViewModelDelegate {
-    func didMoviesReached(movieList:[MovieItem])
-}
+protocol MovieListViewModelProtocol {
+    var dataSource: [MovieItem]? { get }
+ }
 
-class MovieListViewModel {
+class MovieListViewModel: MovieListViewModelProtocol {
     
-    var delegate:MovieListViewModelDelegate!
+    var view: MovieListViewControllerProtocol
+    private(set) var dataSource : [MovieItem]?
     
-    init(delegate:MovieListViewModelDelegate) {
-        self.delegate = delegate
+    init(viewInterface: MovieListViewControllerProtocol){
+        view = viewInterface
     }
     
     func getMovieList(){
         LocalDBManager.sharedInstance.getMovieItems { movieList in
-            self.delegate.didMoviesReached(movieList: movieList)
+            self.dataSource = movieList
+            self.view.reloadData()
         }
     }
     
