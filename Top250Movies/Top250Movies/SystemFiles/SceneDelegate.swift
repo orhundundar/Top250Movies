@@ -20,11 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         currentScene = windowScene
-        let window = UIWindow(windowScene: windowScene)
-        let viewController = RootViewController()
+        let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        let viewController = BaseViewController()
+        viewController.showLoading()
         window.rootViewController = viewController
         self.window = window
         window.makeKeyAndVisible()
+        
+        DataSyncHelper().syncDatas()
         
     }
 

@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  DataSyncHelper.swift
 //  Top250Movies
 //
 //  Created by Orhun Dündar on 14.06.2023.
@@ -8,17 +8,17 @@
 import UIKit
 import NetworkAPI
 
-class RootViewController: BaseViewController {
+class DataSyncHelper {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
-        showLoading()
+    private var loadingVC: BaseViewController!
+    
+    func syncDatas(){
+        
         getDatas()
+        
     }
     
     private func getDatas(){
-        
         
         NetworkAPI.TopMovieService().getMoviesList { response in
             
@@ -35,7 +35,7 @@ class RootViewController: BaseViewController {
             }
             
             group.notify(queue: .main) { [weak self] in
-                self?.dismissLoading()
+                self?.loadingVC.dismissLoading()
                 let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
                 let navController = UINavigationController(rootViewController: MovieListViewController())
                 sceneDelegate.setRootViewController(navController)

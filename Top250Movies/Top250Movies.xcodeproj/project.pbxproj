@@ -28,9 +28,9 @@
 		C6649A702A392D3700D068F7 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6649A6E2A392D3700D068F7 /* MovieDetailViewController.xib */; };
 		C6649A722A392D4800D068F7 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6649A712A392D4800D068F7 /* MovieDetailViewModel.swift */; };
 		C6649A762A39AD9800D068F7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6649A752A39AD9800D068F7 /* LoadingView.swift */; };
-		C6649A782A39BB8C00D068F7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6649A772A39BB8C00D068F7 /* RootViewController.swift */; };
 		C6E364852A39FC7A00F187EF /* NetworkAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E364842A39FC7A00F187EF /* NetworkAPI.framework */; };
 		C6E364862A39FC7A00F187EF /* NetworkAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6E364842A39FC7A00F187EF /* NetworkAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C6E364892A3A014400F187EF /* DataSyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E364882A3A014400F187EF /* DataSyncHelper.swift */; };
 		D9A8F7C9D871E655CF388DB0 /* Pods_Top250Movies_Top250MoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E490790FD42EBA04A494A4 /* Pods_Top250Movies_Top250MoviesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,8 +95,8 @@
 		C6649A6E2A392D3700D068F7 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		C6649A712A392D4800D068F7 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		C6649A752A39AD9800D068F7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		C6649A772A39BB8C00D068F7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C6E364842A39FC7A00F187EF /* NetworkAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6E364882A3A014400F187EF /* DataSyncHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSyncHelper.swift; sourceTree = "<group>"; };
 		CDC00BA13FC01DCC51A6792E /* Pods_Top250Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Top250Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6E625943F89DF7C549E1D5 /* Pods-Top250Movies-Top250MoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top250Movies-Top250MoviesUITests.release.xcconfig"; path = "Target Support Files/Pods-Top250Movies-Top250MoviesUITests/Pods-Top250Movies-Top250MoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F0D937048835C0A083041D5D /* Pods-Top250MoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top250MoviesTests.debug.xcconfig"; path = "Target Support Files/Pods-Top250MoviesTests/Pods-Top250MoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,7 +226,6 @@
 		C6649A582A38FCBE00D068F7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C6649A772A39BB8C00D068F7 /* RootViewController.swift */,
 				C6649A592A38FE8000D068F7 /* MovieList */,
 				C6649A5A2A38FE9900D068F7 /* MovieDetail */,
 			);
@@ -295,6 +294,7 @@
 			children = (
 				C6649A602A39008B00D068F7 /* BaseViewController.swift */,
 				C6649A752A39AD9800D068F7 /* LoadingView.swift */,
+				C6E364882A3A014400F187EF /* DataSyncHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -553,7 +553,7 @@
 				C6649A682A3907ED00D068F7 /* MovieListCell.swift in Sources */,
 				C6649A762A39AD9800D068F7 /* LoadingView.swift in Sources */,
 				C6649A722A392D4800D068F7 /* MovieDetailViewModel.swift in Sources */,
-				C6649A782A39BB8C00D068F7 /* RootViewController.swift in Sources */,
+				C6E364892A3A014400F187EF /* DataSyncHelper.swift in Sources */,
 				C6649A612A39008B00D068F7 /* BaseViewController.swift in Sources */,
 				C6396D412A38AFBA0024F9F3 /* LocalDBManager.swift in Sources */,
 				C6649A6C2A39183200D068F7 /* NSObject+Extensions.swift in Sources */,
