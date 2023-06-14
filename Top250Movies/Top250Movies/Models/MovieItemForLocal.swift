@@ -10,7 +10,7 @@ import RealmSwift
 import ObjectMapper
 
 // MARK: - MovieItem
-class MovieItem: Object, Codable {
+class MovieItemForLocal: Object, Codable {
     @objc dynamic var id: String
     @objc dynamic var rank: String
     @objc dynamic var title: String

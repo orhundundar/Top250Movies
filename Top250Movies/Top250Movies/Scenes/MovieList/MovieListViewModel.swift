@@ -8,13 +8,13 @@
 import Foundation
 
 protocol MovieListViewModelProtocol {
-    var dataSource: [MovieItem]? { get }
+    var dataSource: [MovieItemForLocal]? { get }
  }
 
 class MovieListViewModel: MovieListViewModelProtocol {
     
     var view: MovieListViewControllerProtocol
-    private(set) var dataSource : [MovieItem]?
+    private(set) var dataSource : [MovieItemForLocal]?
     
     init(viewInterface: MovieListViewControllerProtocol){
         view = viewInterface

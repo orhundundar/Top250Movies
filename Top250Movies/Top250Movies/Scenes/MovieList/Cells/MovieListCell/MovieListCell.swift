@@ -44,7 +44,7 @@ class MovieListCell: UITableViewCell {
         
     }
     
-    func setCell(movie:MovieItem) {
+    func setCell(movie:MovieItemForLocal) {
         coverImageView.kf.setImage(with: URL(string: movie.image))
         titleLabel.text = movie.title
         rankLabel.text = movie.rank

@@ -20,7 +20,7 @@ final class LocalDBManagerTests: XCTestCase {
 
     func saveMovieItemTest() throws {
         
-        let movie = MovieItem(id: "test", rank: "test", title: "test", fullTitle: "test", year: "test", image: "test", crew: "test", imDbRating: "test", imDbRatingCount: "test")
+        let movie = MovieItemForLocal(id: "test", rank: "test", title: "test", fullTitle: "test", year: "test", image: "test", crew: "test", imDbRating: "test", imDbRatingCount: "test")
         
         LocalDBManager.sharedInstance.saveMovieItem(movie: movie) { id in
             XCTAssertNotNil(id)

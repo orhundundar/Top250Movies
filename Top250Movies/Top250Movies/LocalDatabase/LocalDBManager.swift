@@ -35,8 +35,8 @@ class LocalDBManager {
         database = try! Realm()
     }
     
-    func saveMovieItem(movie:MovieItem!, result: @escaping (String) -> Void) {
-        let localItems:Results<MovieItem>! = database.objects(MovieItem.self).filter("id = %@", movie.id)
+    func saveMovieItem(movie:MovieItemForLocal!, result: @escaping (String) -> Void) {
+        let localItems:Results<MovieItemForLocal>! = database.objects(MovieItemForLocal.self).filter("id = %@", movie.id)
         
         if localItems.count == 0
         {
@@ -51,15 +51,15 @@ class LocalDBManager {
         }
     }
     
-    func getMovieItems(result: @escaping ([MovieItem]) -> Void) {
-        let results: Results<MovieItem> = database.objects(MovieItem.self)
-        result(results.toArray(type: MovieItem.self))
+    func getMovieItems(result: @escaping ([MovieItemForLocal]) -> Void) {
+        let results: Results<MovieItemForLocal> = database.objects(MovieItemForLocal.self)
+        result(results.toArray(type: MovieItemForLocal.self))
     }
     
-    func getMovieItem(id:String, result: @escaping (MovieItem?) -> Void) {
-        let results: Results<MovieItem> = database.objects(MovieItem.self).filter("id = %@" , id)
+    func getMovieItem(id:String, result: @escaping (MovieItemForLocal?) -> Void) {
+        let results: Results<MovieItemForLocal> = database.objects(MovieItemForLocal.self).filter("id = %@" , id)
         if results.count > 0 {
-            let movie : MovieItem? = results.first
+            let movie : MovieItemForLocal? = results.first
             result(movie)
         }
         else {

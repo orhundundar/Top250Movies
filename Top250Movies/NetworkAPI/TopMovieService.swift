@@ -16,8 +16,10 @@ open class TopMovieService: TopMovieServiceProtocol {
     open func getMoviesList(success: @escaping(Top250MoviesResponseModel) -> Void, failure: @escaping(String) -> Void) {
         NetworkManager.shared.sendRequestWith(target: .top250Movies) { response in
             print(response)
+            success(response as! Top250MoviesResponseModel)
         } failure: { str in
             print(str)
+            failure(str)
         }
 
     }

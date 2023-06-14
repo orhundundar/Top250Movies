@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkAPI
 
 class RootViewController: BaseViewController {
     
@@ -17,13 +18,17 @@ class RootViewController: BaseViewController {
     }
     
     private func getDatas(){
-        IMDBApiManager.getTop250Movies { movies in
+        
+        
+        NetworkAPI.TopMovieService().getMoviesList { response in
             
+            let movies = response.items
             let group = DispatchGroup()
             
-            for movie in movies! {
+            for movie in movies {
                 group.enter()
-                LocalDBManager.sharedInstance.saveMovieItem(movie: movie) { id in
+                let movieforLocal = MovieItemForLocal(id: movie.id, rank: movie.rank, title: movie.title, fullTitle: movie.fullTitle, year: movie.year, image: movie.image, crew: movie.crew, imDbRating: movie.imDbRating, imDbRatingCount: movie.imDbRatingCount)
+                LocalDBManager.sharedInstance.saveMovieItem(movie: movieforLocal) { id in
                     print(id)
                     group.leave()
                 }
@@ -36,7 +41,11 @@ class RootViewController: BaseViewController {
                 sceneDelegate.setRootViewController(navController)
             }
             
+        } failure: { message in
+            print(message)
+            //TODO
         }
+        
     }
     
 }
