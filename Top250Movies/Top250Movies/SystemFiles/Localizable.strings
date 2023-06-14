@@ -28,3 +28,9 @@
 
 //Others
 "okay" = "Okay";
+"error" = "Error";
+
+//Errors
+"MovieListViewModel.error.emptyList" = "Empty List!";
+"MovieDetailViewModel.error.dataNotfound" = "Movie not found.";
+

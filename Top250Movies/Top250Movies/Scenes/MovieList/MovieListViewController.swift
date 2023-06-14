@@ -30,7 +30,7 @@ class MovieListViewController: BaseViewController {
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
         self.view.addSubview(moviesTableView)
-        moviesTableView.register(UINib(nibName: MovieListCell.className, bundle: nil), forCellReuseIdentifier: "MovieListCell")
+        moviesTableView.register(UINib(nibName: MovieListCell.className, bundle: nil), forCellReuseIdentifier: MovieListCell.className)
     }
     
 }
@@ -41,14 +41,14 @@ extension MovieListViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListCell") as! MovieListCell
-        cell.setCell(movie: self.viewModel.dataSource![indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieListCell.className) as! MovieListCell
+        cell.setCell(movie: self.viewModel.dataSource[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movieDetail = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
-        movieDetail.id = viewModel.dataSource![indexPath.row].id
+        movieDetail.id = viewModel.dataSource[indexPath.row].id
         self.navigationController?.pushViewController(movieDetail, animated: true)
     }
     
@@ -61,6 +61,6 @@ extension MovieListViewController: MovieListViewControllerProtocol {
     }
     
     func showErrorMessage (message: String) {
-        // Alert
+        self.showAlert(title: "error".localized, message: message)
     }
 }

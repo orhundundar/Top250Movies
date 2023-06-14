@@ -23,7 +23,8 @@ class MovieDetailViewModel : MovieDetailViewModelProtocol {
     func getMovie(id:String){
         LocalDBManager.sharedInstance.getMovieItem(id: id) { movie in
             guard let movieItem = movie else {
-                return //TODO
+                self.view.showErrorMessage(message: "MovieDetailViewModel.error.dataNotfound".localized)
+                return
             }
             self.dataSource = movieItem
             self.view.reloadData()

@@ -9,13 +9,9 @@ import UIKit
 import NetworkAPI
 
 class DataSyncHelper {
-    
-    private var loadingVC: BaseViewController!
-    
+        
     func syncDatas(){
-        
         getDatas()
-        
     }
     
     private func getDatas(){
@@ -35,7 +31,6 @@ class DataSyncHelper {
             }
             
             group.notify(queue: .main) { [weak self] in
-                self?.loadingVC.dismissLoading()
                 let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
                 let navController = UINavigationController(rootViewController: MovieListViewController())
                 sceneDelegate.setRootViewController(navController)
@@ -43,7 +38,11 @@ class DataSyncHelper {
             
         } failure: { message in
             print(message)
-            //TODO
+            var errorVC: BaseViewController = BaseViewController()
+            errorVC.showAlert(title: "error".localized, message: message)
+            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+            let navController = UINavigationController(rootViewController: errorVC)
+            sceneDelegate.setRootViewController(navController)
         }
         
     }

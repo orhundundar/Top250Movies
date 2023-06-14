@@ -8,13 +8,13 @@
 import Foundation
 
 protocol MovieListViewModelProtocol {
-    var dataSource: [MovieItemForLocal]? { get }
+    var dataSource: [MovieItemForLocal]! { get }
  }
 
 class MovieListViewModel: MovieListViewModelProtocol {
     
     var view: MovieListViewControllerProtocol
-    private(set) var dataSource : [MovieItemForLocal]?
+    private(set) var dataSource : [MovieItemForLocal]!
     
     init(viewInterface: MovieListViewControllerProtocol){
         view = viewInterface
@@ -22,7 +22,13 @@ class MovieListViewModel: MovieListViewModelProtocol {
     
     func getMovieList(){
         LocalDBManager.sharedInstance.getMovieItems { movieList in
-            self.dataSource = movieList
+            
+            guard let movies = movieList else {
+                self.view.showErrorMessage(message: "MovieListViewModel.error.emptyList".localized)
+                return
+            }
+            
+            self.dataSource = movies
             self.view.reloadData()
         }
     }

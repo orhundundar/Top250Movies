@@ -38,20 +38,18 @@ class LocalDBManager {
     func saveMovieItem(movie:MovieItemForLocal!, result: @escaping (String) -> Void) {
         let localItems:Results<MovieItemForLocal>! = database.objects(MovieItemForLocal.self).filter("id = %@", movie.id)
         
-        if localItems.count == 0
-        {
+        if localItems.count == 0{
             try! database.write {
                 database.add(movie)
             }
             result(movie.id)
         }
-        else
-        {
+        else{
             result(movie.id)
         }
     }
     
-    func getMovieItems(result: @escaping ([MovieItemForLocal]) -> Void) {
+    func getMovieItems(result: @escaping ([MovieItemForLocal]?) -> Void) {
         let results: Results<MovieItemForLocal> = database.objects(MovieItemForLocal.self)
         result(results.toArray(type: MovieItemForLocal.self))
     }

@@ -106,6 +106,8 @@ extension MovieDetailViewController : MovieDetailViewControllerProtocol {
     }
     
     func showErrorMessage(message: String) {
-        //TODO
+        self.showAlert(title: "error".localized, message: message) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
