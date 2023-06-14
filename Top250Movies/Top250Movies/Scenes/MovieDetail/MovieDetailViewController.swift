@@ -13,7 +13,7 @@ protocol MovieDetailViewControllerProtocol {
     func showErrorMessage(message: String)
 }
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: BaseViewController {
     
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var fullTitleTitleLabel: UILabel!

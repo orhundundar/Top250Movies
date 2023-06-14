@@ -12,7 +12,7 @@ protocol MovieListViewControllerProtocol {
     func showErrorMessage(message: String)
 }
 
-class MovieListViewController: UIViewController {
+class MovieListViewController: BaseViewController {
     
     var moviesTableView = UITableView()
     private var viewModel: MovieListViewModel!
