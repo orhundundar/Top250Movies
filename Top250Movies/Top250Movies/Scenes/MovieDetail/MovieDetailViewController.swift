@@ -41,7 +41,7 @@ class MovieDetailViewController: BaseViewController {
     }
     
     private func setUI(){
-        fullTitleTitleLabel.text = "Full Title:"
+        fullTitleTitleLabel.text = "MovieListCell.fullTitleTitleLabel".localized
         fullTitleTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         fullTitleTitleLabel.textColor = .gray
         
@@ -49,7 +49,7 @@ class MovieDetailViewController: BaseViewController {
         fullTitleLabel.textColor = .gray
         fullTitleLabel.numberOfLines = 0
         
-        rankTitleLabel.text = "Rank:"
+        rankTitleLabel.text = "MovieListCell.rankTitleLabel".localized
         rankTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         rankTitleLabel.textColor = .gray
         
@@ -57,7 +57,7 @@ class MovieDetailViewController: BaseViewController {
         rankLabel.textColor = .gray
         rankLabel.numberOfLines = 0
         
-        yearTitleLabel.text = "Year:"
+        yearTitleLabel.text = "MovieListCell.yearTitleLabel".localized
         yearTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         yearTitleLabel.textColor = .gray
         
@@ -65,7 +65,7 @@ class MovieDetailViewController: BaseViewController {
         yearLabel.textColor = .gray
         yearLabel.numberOfLines = 0
         
-        crewTitleLabel.text = "Crew:"
+        crewTitleLabel.text = "MovieListCell.crewTitleLabel".localized
         crewTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         crewTitleLabel.textColor = .gray
         
@@ -73,7 +73,7 @@ class MovieDetailViewController: BaseViewController {
         crewLabel.textColor = .gray
         crewLabel.numberOfLines = 0
         
-        imDbRatingTitleLabel.text = "Rating:"
+        imDbRatingTitleLabel.text = "MovieListCell.imDbRatingTitleLabel".localized
         imDbRatingTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         imDbRatingTitleLabel.textColor = .gray
         
@@ -81,7 +81,7 @@ class MovieDetailViewController: BaseViewController {
         imDbRatingLabel.textColor = .gray
         imDbRatingLabel.numberOfLines = 0
         
-        imDbRatingCountTitleLabel.text = "Rating Count:"
+        imDbRatingCountTitleLabel.text = "MovieListCell.imDbRatingCountTitleLabel".localized
         imDbRatingCountTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         imDbRatingCountTitleLabel.textColor = .gray
         

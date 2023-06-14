@@ -27,13 +27,13 @@ class BaseViewController: UIViewController {
     
     func showAlert(title:String, message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "okay", style: .default))
+        alert.addAction(UIAlertAction(title: "okay".localized, style: .default))
         self.present(alert, animated: true, completion: nil)
     }
     
     func showAlert(title:String, message:String, okayAction: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "okay", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "okay".localized, style: .default, handler: { _ in
             okayAction()
         }))
         self.present(alert, animated: true, completion: nil)

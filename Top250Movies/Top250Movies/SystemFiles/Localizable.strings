@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  Top250Movies
+
+  Created by Orhun Dündar on 14.06.2023.
+  
+*/
+
+//MovieListViewController
+
+"MovieListViewController.title" = "Top 250 Movie";
+
+
+//MovieListCell
+
+"MovieListCell.rankTitlelabel" = "Rank:";
+"MovieListCell.ratingTitlelabel" = "Rating:";
+
+
+//MovieDetailViewController
+"MovieListCell.fullTitleTitleLabel" = "Full Title:";
+"MovieListCell.rankTitleLabel" = "Rank:";
+"MovieListCell.yearTitleLabel" = "Year:";
+"MovieListCell.crewTitleLabel" = "Crew:";
+"MovieListCell.imDbRatingTitleLabel" = "Rating:";
+"MovieListCell.imDbRatingCountTitleLabel" = "Rating Count:";
+
+
+//Others
+"okay" = "Okay";

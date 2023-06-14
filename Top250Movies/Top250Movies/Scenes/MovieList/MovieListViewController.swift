@@ -20,7 +20,7 @@ class MovieListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        self.title = "Top 250 Movie"
+        self.title = "MovieListViewController.title".localized
         viewModel = MovieListViewModel(viewInterface: self)
         viewModel.getMovieList()
     }

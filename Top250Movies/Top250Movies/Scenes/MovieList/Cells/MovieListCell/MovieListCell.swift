@@ -25,14 +25,14 @@ class MovieListCell: UITableViewCell {
         
         titleLabel.numberOfLines = 0
         
-        rankTitleLabel.text = "Rank:"
+        rankTitleLabel.text = "MovieListCell.rankTitlelabel".localized
         rankTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         rankTitleLabel.textColor = .gray
         
         rankLabel.font = UIFont.systemFont(ofSize: 14)
         rankLabel.textColor = .gray
         
-        ratingTitleLabel.text = "Rating:"
+        ratingTitleLabel.text = "MovieListCell.ratingTitlelabel".localized
         ratingTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         ratingTitleLabel.textColor = .gray
         

@@ -31,6 +31,8 @@
 		C6E364852A39FC7A00F187EF /* NetworkAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E364842A39FC7A00F187EF /* NetworkAPI.framework */; };
 		C6E364862A39FC7A00F187EF /* NetworkAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6E364842A39FC7A00F187EF /* NetworkAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C6E364892A3A014400F187EF /* DataSyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E364882A3A014400F187EF /* DataSyncHelper.swift */; };
+		C6E3648B2A3A09C500F187EF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3648A2A3A09C500F187EF /* String+Extensions.swift */; };
+		C6E3648D2A3A09E600F187EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E3648C2A3A09E600F187EF /* Localizable.strings */; };
 		D9A8F7C9D871E655CF388DB0 /* Pods_Top250Movies_Top250MoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E490790FD42EBA04A494A4 /* Pods_Top250Movies_Top250MoviesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		C6649A752A39AD9800D068F7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C6E364842A39FC7A00F187EF /* NetworkAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E364882A3A014400F187EF /* DataSyncHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSyncHelper.swift; sourceTree = "<group>"; };
+		C6E3648A2A3A09C500F187EF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		C6E3648C2A3A09E600F187EF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CDC00BA13FC01DCC51A6792E /* Pods_Top250Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Top250Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6E625943F89DF7C549E1D5 /* Pods-Top250Movies-Top250MoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top250Movies-Top250MoviesUITests.release.xcconfig"; path = "Target Support Files/Pods-Top250Movies-Top250MoviesUITests/Pods-Top250Movies-Top250MoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F0D937048835C0A083041D5D /* Pods-Top250MoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top250MoviesTests.debug.xcconfig"; path = "Target Support Files/Pods-Top250MoviesTests/Pods-Top250MoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				C6649A6B2A39183200D068F7 /* NSObject+Extensions.swift */,
+				C6E3648A2A3A09C500F187EF /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				C6396D002A3866650024F9F3 /* AppDelegate.swift */,
 				C6396D022A3866650024F9F3 /* SceneDelegate.swift */,
 				C6396D0E2A3866670024F9F3 /* Info.plist */,
+				C6E3648C2A3A09E600F187EF /* Localizable.strings */,
 			);
 			path = SystemFiles;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E3648D2A3A09E600F187EF /* Localizable.strings in Resources */,
 				C6649A702A392D3700D068F7 /* MovieDetailViewController.xib in Resources */,
 				C6396D0D2A3866670024F9F3 /* LaunchScreen.storyboard in Resources */,
 				C6396D0A2A3866670024F9F3 /* Assets.xcassets in Resources */,
@@ -556,6 +563,7 @@
 				C6E364892A3A014400F187EF /* DataSyncHelper.swift in Sources */,
 				C6649A612A39008B00D068F7 /* BaseViewController.swift in Sources */,
 				C6396D412A38AFBA0024F9F3 /* LocalDBManager.swift in Sources */,
+				C6E3648B2A3A09C500F187EF /* String+Extensions.swift in Sources */,
 				C6649A6C2A39183200D068F7 /* NSObject+Extensions.swift in Sources */,
 				C6649A5C2A38FF2C00D068F7 /* MovieListViewController.swift in Sources */,
 				C6396D012A3866650024F9F3 /* AppDelegate.swift in Sources */,
