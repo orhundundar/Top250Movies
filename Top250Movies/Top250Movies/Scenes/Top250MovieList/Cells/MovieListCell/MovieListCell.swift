@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieListCell: UITableViewCell {
     
+    @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rankTitleLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
@@ -19,6 +21,8 @@ class MovieListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        coverImageView.layer.cornerRadius = 8
+        
         titleLabel.numberOfLines = 0
         
         rankTitleLabel.text = "Rank:"
@@ -41,6 +45,7 @@ class MovieListCell: UITableViewCell {
     }
     
     func setCell(movie:MovieItem) {
+        coverImageView.kf.setImage(with: URL(string: movie.image))
         titleLabel.text = movie.title
         rankLabel.text = movie.rank
         ratingLabel.text = movie.imDbRating
